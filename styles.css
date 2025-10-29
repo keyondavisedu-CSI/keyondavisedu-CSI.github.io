@@ -1,48 +1,56 @@
-body {
-background: slateblue;
-font-family: Arial, Helvetica, sans-serif;
+/* Base */
+body{
+  background: slateblue;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: #0f172a;
 }
-h1 {
-color: bisque;
-text-align: center;
+
+h1{
+  color: bisque;
+  text-align: center;
+  margin: 24px 0;
 }
-   
-.projects { display:flex;   
-    flex-wrap:wrap; 
-} 
- .project {
-        width: 30%;
-        margin: 10px;
-        padding: 20px 10px;
-        background: white; /* pick a color */ 
-    border-radius: 25%;
+
+/* Project grid */
+.projects{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;     /* center cards */
+  padding: 0 16px 40px;
+}
+
 /* Project card */
 .project{
+  flex: 1 1 320px;             /* responsive width */
+  max-width: 560px;            /* don’t get too wide */
   background: #ffffff;
-  color: #0f172a;                  /* make text readable on white */
-  border-radius: 16px;             /* sensible corners */
+  color: #0f172a;
+  border-radius: 16px;         /* sensible corners */
   padding: 20px;
   box-shadow: 0 12px 24px rgba(0,0,0,.15);
   border: 1px solid rgba(255,255,255,.1);
-    
-    .project img {
-  width: 300px;
-  height: 300px;
-  margin: 10px auto;
-  border: 2px solid rgb(126, 14, 201); /* choose any accent color */
-  display: block;
 }
 
-a {
+/* Thumbnail image */
+.project img{
+  width: clamp(260px, 40vw, 640px);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border: 2px solid rgb(126, 14, 201);
+  border-radius: 12px;
+}
+
+/* Text + links */
+.project p{
+  text-align: center;
+  margin: 15px 0 0;
+}
+
+a{
   text-decoration: none;
   color: purple;
 }
-
-.project p {
-  text-align: center;
-  margin: 15px;
-}
-
-
-}
-
