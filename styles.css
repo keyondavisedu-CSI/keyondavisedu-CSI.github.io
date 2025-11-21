@@ -1,90 +1,67 @@
-/* ===== Base ===== */
+/* Base */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #00c9f5;          /* aqua background */
+  background: #00c9f5;        /* aqua */
   color: #ffffff;
 }
 
 h1 {
-  color: #ffffff;
   text-align: center;
-  margin: 24px 0 32px;
+  margin: 24px 0;
 }
 
-/* Simple sections above/below projects */
-.about,
-.skills,
-.contact {
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 24px;
-}
-
-/* ===== Project grid wrapper ===== */
+/* PROJECT WRAPPER */
 .projects {
   max-width: 1200px;
   margin: 0 auto 60px;
   padding: 0 16px;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);   /* 3 columns */
-  gap: 40px;                                /* spacing */
-  justify-items: center;                    /* center cards */
 }
 
-
-/* Rows (top: 3 cards, bottom: 1 card) */
+/* ROWS */
 .top-row,
 .bottom-row {
   display: flex;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;          /* keep 3 across on top */
 }
 
 .bottom-row {
   margin-top: 40px;
 }
 
-/* ===== Project cards ===== */
+/* CARDS */
 .project {
-  background: #3f5c49;          /* dark green card */
+  background: #3f5c49;        /* green card */
   color: #ffffff;
   padding: 40px 30px;
   max-width: 360px;
   width: 100%;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-  border-radius: 0;              /* square corners like screenshot */
 }
 
-/* Card titles */
+/* Titles */
 .project h3 {
   text-align: center;
-  font-size: 1.4rem;
   margin: 0 0 24px;
-  color: #f4d89c;                /* gold title text */
+  font-size: 1.4rem;
+  color: #f4d89c;             /* gold */
 }
 
-/* Paragraph text */
+/* Text */
 .project p {
   font-size: 0.98rem;
   line-height: 1.5;
   margin: 0;
 }
 
-/* Images (thumbnails) */
+/* Images */
 .project img {
   display: block;
   margin: 0 auto 20px;
   max-width: 60%;
   height: auto;
-  border: none;                  /* no border around images */
-}
-
-/* slightly larger image for Java logo if needed */
-.project img.large {
-  max-width: 45%;
 }
 
 /* Links */
@@ -92,14 +69,14 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
 
-/* ===== Responsive ===== */
+/* Small screens: let them stack */
 @media (max-width: 900px) {
-  .project {
-    max-width: 100%;
+  .top-row,
+  .bottom-row {
+    flex-wrap: wrap;
   }
 }
